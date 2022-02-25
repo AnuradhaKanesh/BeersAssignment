@@ -1,16 +1,16 @@
 package GetAllBeers;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.Date;
 import java.util.List;
-
+@Getter
+@Builder
 public class beers {
 
     @Setter
     private int statusCode;
-
-    List<Beers> beersList;
+    private List<Beers> beersList;
 
     @Getter
     public static class Beers {
@@ -26,13 +26,13 @@ public class beers {
         private String srm;
         private Volume volume;
         private String contributed_by;
-        private String abv;
+        private double abv;
         private String[] food_pairing;
         private String name;
-        private String ph;
+        private double ph;
         private String tagline;
         private Ingredients ingredients;
-        private String id;
+        private int id;
         private String ibu;
         private String brewers_tips;
     }
