@@ -18,6 +18,9 @@ dependencies {
     testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
 }
 
-test {
-    useTestNG()
+test { //this is the gradle task to be executed
+    useTestNG() { //Tells Gradle to use TestNG
+        useDefaultListeners = true // Tells TestNG to execute its default reporting structure
+        suites 'src/resources/testng.xml' //location of our suite.xml
+    }
 }
